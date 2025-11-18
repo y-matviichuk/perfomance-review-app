@@ -1,0 +1,3 @@
+{
+	"*.{ts,tsx}": ["pnpm exec biome check --write"]
+}

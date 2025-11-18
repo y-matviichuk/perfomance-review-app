@@ -1,0 +1,5 @@
+packages:
+  # Frontend application written in React
+  - "client"
+  # Backend application written in Express
+  - "server"
