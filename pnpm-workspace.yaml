@@ -1,5 +1,5 @@
 packages:
   # Frontend application written in React
-  - "client"
+  - "frontend"
   # Backend application written in Express
-  - "server"
+  - "backend"
