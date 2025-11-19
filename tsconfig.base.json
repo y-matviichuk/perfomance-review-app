@@ -1,1 +1,17 @@
-{ "compilerOptions": {} }
+{
+	"compilerOptions": {
+		"target": "es2020",
+		"useDefineForClassFields": true,
+		"module": "esnext",
+		"moduleResolution": "bundler",
+		"skipLibCheck": true,
+		"strict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noFallthroughCasesInSwitch": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"forceConsistentCasingInFileNames": true,
+		"isolatedModules": true
+	}
+}
