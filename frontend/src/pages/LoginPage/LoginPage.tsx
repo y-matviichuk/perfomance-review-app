@@ -33,7 +33,9 @@ export const LoginPage = () => {
 			<Card>
 				<Title>Welcome Back</Title>
 				<Subtitle>Sign in to manage your projects</Subtitle>
-				<Button onClick={handleLogin}>Simulate Login</Button>
+				<Button variant="primary" onClick={handleLogin}>
+					Simulate Login
+				</Button>
 			</Card>
 		</Container>
 	);

@@ -1,8 +1,15 @@
 import type { ComponentProps, FC } from 'react';
 import { StyledButton } from './styles';
+import type { ButtonVariant } from './types';
 
-type ButtonProps = ComponentProps<'button'>;
+interface ButtonProps extends ComponentProps<'button'> {
+	variant: ButtonVariant;
+}
 
-export const Button: FC<ButtonProps> = ({ children, ...props }) => {
-	return <StyledButton {...props}>{children}</StyledButton>;
+export const Button: FC<ButtonProps> = ({ children, variant, ...props }) => {
+	return (
+		<StyledButton variant={variant} {...props}>
+			{children}
+		</StyledButton>
+	);
 };
