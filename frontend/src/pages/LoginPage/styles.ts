@@ -11,11 +11,11 @@ export const Container = styled.div`
 export const Card = styled.div`
   background: white;
   padding: 2.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 0.75rem;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 100%;
-  max-width: 400px;
+  max-width: 25rem;
 `;
 
 export const Title = styled.h1`

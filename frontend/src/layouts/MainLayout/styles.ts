@@ -7,15 +7,15 @@ export const LayoutContainer = styled.div`
 
 export const Header = styled.header`
 	background-color: white;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-	padding: 16px 24px;
+	box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+	padding: 1rem 1.5rem;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 `;
 
 export const Logo = styled.h1`
-	font-size: 24px;
+	font-size: 1.5rem;
 	font-weight: 700;
 	color: #007bff;
 	margin: 0;
@@ -24,9 +24,9 @@ export const Logo = styled.h1`
 export const HeaderRight = styled.div`
 	display: flex;
 	align-items: center;
-	gap: 12px;
+	gap: 0.75rem;
 `;
 
 export const MainContent = styled.main`
-	padding: 24px;
+	padding: 1.5rem;
 `;

@@ -1,8 +1,8 @@
+import { ReactQueryProvider } from '@providers';
 import { RouterOutlet } from '@router';
-import { GlobalStyle } from '@styles';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { ReactQueryProvider } from '@/providers';
+import { GlobalStyle } from './styles';
 
 const rootElement = document.getElementById('root');
 

@@ -1,7 +1,7 @@
+import { Button } from '@components/ui/Button';
 import { MainLayout } from '@layouts';
 import { useAuth } from '@store';
 import { useNavigate } from 'react-router';
-import { Button } from '@/components/ui/Button';
 import { ServerStatusCard, WelcomeCard } from './components';
 import { DashboardContainer } from './styles';
 

@@ -1,5 +1,5 @@
+import { StatusBadge } from '@components/ui/StatusBadge';
 import type { FC } from 'react';
-import { StatusBadge } from '@/components/ui/StatusBadge';
 import { StatusLabel, StatusRow } from './styles';
 
 interface ServerConnectionStatusProps {

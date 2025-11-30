@@ -43,10 +43,10 @@
 			"@router/*": ["src/router/*"],
 			"@store": ["src/store"],
 			"@store/*": ["src/store/*"],
-			"@styles": ["src/styles"],
-			"@styles/*": ["src/styles/*"],
 			"@providers": ["src/providers"],
-			"@providers/*": ["src/providers/*"]
+			"@providers/*": ["src/providers/*"],
+			"@schemas": ["src/schemas"],
+			"@schemas/*": ["src/schemas/*"]
 		}
 	},
 	"include": ["src"]

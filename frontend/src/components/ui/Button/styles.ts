@@ -20,9 +20,9 @@ export const StyledButton = styled.button<ButtonProps>`
 	background-color: ${({ variant }) => getVariantStyles(variant).background};
 	color: white;
 	border: none;
-	padding: 12px 20px;
-	border-radius: 6px;
-	font-size: 16px;	
+	padding: 0.75rem 1.25rem;
+	border-radius: 0.375rem;
+	font-size: 1rem;	
 	font-weight: 600;
 	cursor: pointer;
 	width: 100%;
@@ -33,7 +33,7 @@ export const StyledButton = styled.button<ButtonProps>`
 	}
 
 	&:active {
-		transform: translateY(1px);
+		transform: translateY(0.0625rem);
 	}
 
 	&:disabled {
