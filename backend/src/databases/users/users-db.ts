@@ -1,6 +1,6 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
-import type { User } from '../types';
+import type { User } from '../../types';
 
 const DB_PATH = path.join(__dirname, 'users.json');
 

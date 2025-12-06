@@ -1,7 +1,7 @@
 import type { Request, Response, Router } from 'express';
 import express from 'express';
 import jwt from 'jsonwebtoken';
-import { findUserByEmail } from '../db';
+import { findUserByEmail } from '../databases';
 import type { LoginRequest, UserResponse } from '../types';
 
 const router: Router = express.Router();
