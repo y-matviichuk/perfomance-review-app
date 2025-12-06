@@ -1,5 +1,5 @@
-import type { ServerResponse as ServerResponseType } from '@api';
 import type { FC } from 'react';
+import type { ServerResponse as ServerResponseType } from '@/types/api';
 import { CodeBlock, InfoText } from './styles';
 
 interface ServerResponseProps {

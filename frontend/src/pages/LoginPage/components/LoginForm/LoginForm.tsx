@@ -2,32 +2,33 @@ import { Input } from '@components/forms/Input';
 import { Button } from '@components/ui/Button';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { LoginSchema, type TLoginForm } from '@schemas';
+import { useCallback } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router';
-import { useAuth } from '@/store';
+import { useLoginMutation } from '@/hooks';
 import { LOGIN_FORM_DEFAULT_VALUES, LOGIN_FORM_FIELDS } from './constants';
-import { Form } from './styles';
+import { ErrorMessage, Form } from './styles';
 
 export const LoginForm = () => {
-	const navigate = useNavigate();
-	const login = useAuth((state) => state.login);
-
 	const methods = useForm<TLoginForm>({
 		resolver: zodResolver(LoginSchema),
 		defaultValues: LOGIN_FORM_DEFAULT_VALUES,
 	});
 
-	const handleSubmit = (data: TLoginForm) => {
-		const mockUser = {
-			id: '1',
-			username: data.email.split('@')[0],
-			email: data.email,
-		};
+	const {
+		mutate: loginMutation,
+		error: loginError,
+		isPending: loginIsPending,
+	} = useLoginMutation();
 
-		login(mockUser);
-
-		navigate('/dashboard', { replace: true });
-	};
+	const handleSubmit = useCallback(
+		async (data: TLoginForm) => {
+			loginMutation({
+				email: data.email,
+				password: data.password,
+			});
+		},
+		[loginMutation],
+	);
 
 	return (
 		<FormProvider {...methods}>
@@ -41,8 +42,11 @@ export const LoginForm = () => {
 						placeholder={item.placeholder}
 					/>
 				))}
-				<Button variant="primary" type="submit">
-					Sign In
+				{loginError && (
+					<ErrorMessage>{loginError.response?.data?.error}</ErrorMessage>
+				)}
+				<Button variant="primary" type="submit" disabled={loginIsPending}>
+					{loginIsPending ? 'Signing in...' : 'Sign In'}
 				</Button>
 			</Form>
 		</FormProvider>

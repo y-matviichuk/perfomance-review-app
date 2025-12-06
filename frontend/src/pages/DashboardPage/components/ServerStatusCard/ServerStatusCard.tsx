@@ -1,4 +1,4 @@
-import { useServerStatus } from '@api';
+import { useServerStatus } from '@/hooks';
 import { ServerActions } from './ServerActions';
 import { ServerConnectionStatus } from './ServerConnectionStatus';
 import { ServerResponse } from './ServerResponse';
