@@ -1,14 +1,23 @@
 import { Button } from '@components/ui/Button';
 import { MainLayout } from '@layouts';
-import { useAuth } from '@store';
+import { useAuth, useModals } from '@store';
 import { useNavigate } from 'react-router';
-import { ServerStatusCard, WelcomeCard } from './components';
+
+import {
+	AddProjectModal,
+	ProjectSection,
+	ServerStatusCard,
+	WelcomeCard,
+} from './components';
+
 import { DashboardContainer } from './styles';
 
 export const DashboardPage = () => {
-	const user = useAuth((state) => state.user);
-	const logout = useAuth((state) => state.logout);
 	const navigate = useNavigate();
+
+	const { user, logout } = useAuth();
+
+	const { createProjectModalOpen, setToggleCreateProjectModal } = useModals();
 
 	const handleLogout = () => {
 		logout();
@@ -18,15 +27,26 @@ export const DashboardPage = () => {
 	return (
 		<MainLayout
 			headerRight={
-				<Button variant="danger" onClick={handleLogout}>
-					Logout
-				</Button>
+				<>
+					<Button variant="primary" onClick={setToggleCreateProjectModal}>
+						Add Project
+					</Button>
+					<Button variant="danger" onClick={handleLogout}>
+						Logout
+					</Button>
+				</>
 			}
 		>
 			<DashboardContainer>
 				<WelcomeCard username={user?.username} />
 				<ServerStatusCard />
+				<ProjectSection />
 			</DashboardContainer>
+
+			<AddProjectModal
+				isOpen={createProjectModalOpen}
+				onOpenChange={setToggleCreateProjectModal}
+			/>
 		</MainLayout>
 	);
 };

@@ -3,6 +3,8 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
 import helmet from 'helmet';
+import path from 'path';
+import { projectsRoutes } from './routes';
 import { authRoutes } from './routes/auth';
 
 dotenv.config();
@@ -10,7 +12,11 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(helmet());
+app.use(
+	helmet({
+		crossOriginResourcePolicy: { policy: 'same-site' },
+	}),
+);
 
 app.use(
 	cors({
@@ -22,7 +28,11 @@ app.use(
 app.use(cookieParser());
 app.use(express.json());
 
+app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
+
 app.use('/api/auth', authRoutes);
+
+app.use('/api/projects', projectsRoutes);
 
 app.get('/health', (_req, res) => {
 	res.json({

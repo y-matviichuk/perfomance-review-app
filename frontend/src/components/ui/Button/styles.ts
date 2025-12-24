@@ -26,6 +26,7 @@ export const StyledButton = styled.button<ButtonProps>`
 	font-weight: 600;
 	cursor: pointer;
 	width: 100%;
+	white-space: nowrap;
 	transition: background-color 0.2s;
 
 	&:hover {

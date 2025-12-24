@@ -21,3 +21,18 @@ export interface ServerResponse {
 	message: string;
 	timeStamp: string;
 }
+
+// Project types
+export interface Project {
+	id: string;
+	title: string;
+	description: string;
+	imagePath: string;
+	createdAt: string;
+}
+
+export interface CreateProjectRequest {
+	title: string;
+	description: string;
+	image: File;
+}
