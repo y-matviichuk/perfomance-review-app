@@ -1,6 +1,7 @@
+import { Card } from '@/components/ui/Card';
 import { useServerStatus } from '@/hooks';
 import { ServerConnectionStatus } from './ServerConnectionStatus';
-import { Card, Title } from './styles';
+import { Title } from './styles';
 
 export const ServerStatusCard = () => {
 	const { isSuccess } = useServerStatus();

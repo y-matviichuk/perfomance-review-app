@@ -2,6 +2,7 @@ import { formatDistanceToNow } from 'date-fns';
 import { uk } from 'date-fns/locale';
 import type { FC } from 'react';
 import { getImageUrl } from '@/api/projects';
+import { Card } from '@/components/ui/Card';
 import { useProjectsQuery } from '@/hooks';
 import {
 	EmptyState,
@@ -31,25 +32,27 @@ export const ProjectList: FC = () => {
 	}
 
 	return (
-		<ProjectGrid>
-			{projects.map((project) => (
-				<ProjectCard key={project.id}>
-					<ProjectImage
-						src={getImageUrl(project.imagePath)}
-						alt={project.title}
-					/>
-					<ProjectContent>
-						<ProjectTitle>{project.title}</ProjectTitle>
-						<ProjectDescription>{project.description}</ProjectDescription>
-						<ProjectDate>
-							{formatDistanceToNow(new Date(project.createdAt), {
-								addSuffix: true,
-								locale: uk,
-							})}
-						</ProjectDate>
-					</ProjectContent>
-				</ProjectCard>
-			))}
-		</ProjectGrid>
+		<Card>
+			<ProjectGrid>
+				{projects.map((project) => (
+					<ProjectCard key={project.id}>
+						<ProjectImage
+							src={getImageUrl(project.imagePath)}
+							alt={project.title}
+						/>
+						<ProjectContent>
+							<ProjectTitle>{project.title}</ProjectTitle>
+							<ProjectDescription>{project.description}</ProjectDescription>
+							<ProjectDate>
+								{formatDistanceToNow(new Date(project.createdAt), {
+									addSuffix: true,
+									locale: uk,
+								})}
+							</ProjectDate>
+						</ProjectContent>
+					</ProjectCard>
+				))}
+			</ProjectGrid>
+		</Card>
 	);
 };

@@ -1,0 +1,1 @@
+export { generatePortfolioPDF } from './generatePortfolioPDF';

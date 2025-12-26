@@ -1,5 +1,6 @@
 import type { FC } from 'react';
-import { Card, InfoText, Title } from './styles';
+import { Card } from '@/components/ui/Card';
+import { InfoText, Title } from './styles';
 
 interface WelcomeCardProps {
 	username?: string;

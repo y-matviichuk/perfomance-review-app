@@ -25,6 +25,7 @@ export const ProjectGrid = styled.div`
 `;
 
 export const ProjectCard = styled.div`
+	max-width: 21.875rem;
 	background: white;
 	border-radius: 0.75rem;
 	overflow: hidden;
