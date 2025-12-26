@@ -3,16 +3,16 @@ import multer from 'multer';
 const FIVE_MB = 5 * 1024 * 1024;
 
 const storage = multer.diskStorage({
-	destination: (req, file, cb) => {
+	destination: (_req, _file, cb) => {
 		cb(null, 'uploads/');
 	},
-	filename: (req, file, cb) => {
+	filename: (_req, file, cb) => {
 		const uniqueName = `${Date.now()}-${file.originalname}`;
 		cb(null, uniqueName);
 	},
 });
 
-const fileFilter = (req: any, file: Express.Multer.File, cb: any) => {
+const fileFilter = (_req: any, file: Express.Multer.File, cb: any) => {
 	const allowedTypes = ['image/jpeg', 'image/png', 'image/jpg'];
 
 	if (allowedTypes.includes(file.mimetype)) {

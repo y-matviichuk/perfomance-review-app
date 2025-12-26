@@ -40,7 +40,7 @@ router.post('/', upload.single('image'), async (req, res) => {
 	}
 });
 
-router.get('/', async (req, res) => {
+router.get('/', async (_req, res) => {
 	try {
 		const projects = await readProjects();
 		res.status(200).json(projects);
