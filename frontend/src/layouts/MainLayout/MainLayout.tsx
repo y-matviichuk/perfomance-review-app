@@ -1,3 +1,4 @@
+import { ScrollToTop } from '@components/ui/ScrollToTop';
 import type { FC, PropsWithChildren, ReactNode } from 'react';
 import {
 	Header,
@@ -19,6 +20,7 @@ export const MainLayout: FC<MainLayoutProps> = ({ children, headerRight }) => {
 				{headerRight && <HeaderRight>{headerRight}</HeaderRight>}
 			</Header>
 			<MainContent>{children}</MainContent>
+			<ScrollToTop />
 		</LayoutContainer>
 	);
 };
