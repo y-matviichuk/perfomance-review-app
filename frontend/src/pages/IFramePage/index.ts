@@ -1,0 +1,1 @@
+export { IFramePage } from './IFramePage';

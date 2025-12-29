@@ -24,10 +24,17 @@ export const DashboardPage = () => {
 		navigate('/login', { replace: true });
 	};
 
+	const handleIFrame = () => {
+		navigate('/iframe');
+	};
+
 	return (
 		<MainLayout
 			headerRight={
 				<>
+					<Button variant="primary" onClick={handleIFrame}>
+						IFrame
+					</Button>
 					<Button variant="primary" onClick={setToggleCreateProjectModal}>
 						Add Project
 					</Button>
