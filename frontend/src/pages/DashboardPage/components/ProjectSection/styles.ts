@@ -11,6 +11,12 @@ export const ProjectsHeader = styled.div`
 	margin-bottom: 1rem;
 `;
 
+export const ProjectsButtons = styled.div`
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+`;
+
 export const ProjectsTitle = styled.h2`
 	margin: 0;
 	font-size: 1.5rem;

@@ -9,14 +9,14 @@ export const LOGIN_FORM_DEFAULT_VALUES: TLoginForm = {
 export const LOGIN_FORM_FIELDS: FormField[] = [
 	{
 		name: 'email',
-		label: 'Email',
+		label: 'auth:login.fields.email',
 		type: 'email',
-		placeholder: 'your.email@example.com',
+		placeholder: 'auth:login.fields.emailPlaceholder',
 	},
 	{
 		name: 'password',
-		label: 'Password',
+		label: 'auth:login.fields.password',
 		type: 'password',
-		placeholder: 'Enter your password',
+		placeholder: 'auth:login.fields.passwordPlaceholder',
 	},
 ];

@@ -1,0 +1,43 @@
+{
+  "title": "My Projects",
+  "count_zero": "No projects yet",
+  "count_one": "{{count}} project",
+  "count_other": "{{count}} projects",
+  "buttons": {
+    "add": "Add Project",
+    "downloadPending": "Generating..."
+  },
+  "addProject": {
+    "title": "Add New Project",
+    "fields": {
+      "title": "Project Title",
+      "titlePlaceholder": "Project title",
+      "description": "Description",
+      "descriptionPlaceholder": "Project description",
+      "image": "Upload Image"
+    },
+    "buttons": {
+      "submit": "Create Project",
+      "submitPending": "Creating..."
+    },
+    "success": "Project \"{{title}}\" created successfully!",
+    "errors": {
+      "uploadFailed": "Failed to upload image",
+      "createFailed": "Failed to create project"
+    }
+  },
+  "list": {
+    "loading": "Loading projects...",
+    "error": "Failed to load projects",
+    "empty": "No projects yet. Create your first one!"
+  },
+  "downloadPDF": "Download Portfolio PDF",
+  "createdAt": "Created {{date}}",
+  "validation": {
+    "titleMinLength": "Title must be at least 3 characters",
+    "descriptionMinLength": "Description must be at least 10 characters",
+    "imageRequired": "Image is required",
+    "imageMaxSize": "Max file size is 5MB",
+    "imageFormat": "Only .jpg, .jpeg, .png formats are supported"
+  }
+}

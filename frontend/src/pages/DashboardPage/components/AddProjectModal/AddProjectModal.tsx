@@ -4,10 +4,11 @@ import { Textarea } from '@components/forms/Textarea';
 import { Button } from '@components/ui/Button';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as Dialog from '@radix-ui/react-dialog';
-import { ProjectSchema, type TProjectForm } from '@schemas/project';
+import { getProjectSchema, type TProjectForm } from '@schemas/project';
 import type { FC } from 'react';
 import { useCallback } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import { useCreateProjectMutation } from '@/hooks';
 import { PROJECT_FORM_DEFAULT_VALUES } from './constants';
 import {
@@ -24,8 +25,9 @@ export const AddProjectModal: FC<AddProjectModalProps> = ({
 	isOpen,
 	onOpenChange,
 }) => {
+	const { t } = useTranslation();
 	const methods = useForm<TProjectForm>({
-		resolver: zodResolver(ProjectSchema),
+		resolver: zodResolver(getProjectSchema(t)),
 		defaultValues: PROJECT_FORM_DEFAULT_VALUES,
 	});
 
@@ -52,25 +54,36 @@ export const AddProjectModal: FC<AddProjectModalProps> = ({
 			<Dialog.Portal>
 				<StyledOverlay />
 				<StyledContent>
-					<StyledTitle>Add New Project</StyledTitle>
+					<StyledTitle>{t('projects:addProject.title')}</StyledTitle>
 					<StyledClose aria-label="Close">&times;</StyledClose>
 
 					<FormProvider {...methods}>
 						<Form onSubmit={methods.handleSubmit(handleSubmit)}>
-							<Input name="title" label="Title" placeholder="Project title" />
+							<Input
+								name="title"
+								label={t('projects:addProject.fields.title')}
+								placeholder={t('projects:addProject.fields.titlePlaceholder')}
+							/>
 							<Textarea
 								name="description"
-								label="Description"
-								placeholder="Project description"
+								label={t('projects:addProject.fields.description')}
+								placeholder={t(
+									'projects:addProject.fields.descriptionPlaceholder',
+								)}
 							/>
-							<FileInput name="image" label="Project Image" />
+							<FileInput
+								name="image"
+								label={t('projects:addProject.fields.image')}
+							/>
 
 							{createError && (
 								<ErrorMessage>{createError.response?.data?.error}</ErrorMessage>
 							)}
 
 							<Button variant="primary" type="submit" disabled={isPending}>
-								{isPending ? 'Creating...' : 'Create Project'}
+								{isPending
+									? t('projects:addProject.buttons.submitPending')
+									: t('projects:addProject.buttons.submit')}
 							</Button>
 						</Form>
 					</FormProvider>

@@ -1,0 +1,30 @@
+{
+  "buttons": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "download": "Download",
+    "close": "Close",
+    "add": "Add"
+  },
+  "status": {
+    "loading": "Loading...",
+    "success": "Success!",
+    "error": "Error occurred",
+    "online": "Online",
+    "offline": "Offline"
+  },
+  "errors": {
+    "serverError": "Server error. Please try again later.",
+    "networkError": "Network error. Check your connection.",
+    "unknownError": "Unknown error occurred"
+  },
+  "server": {
+    "title": "Server Status",
+    "connection": "Backend Connection:"
+  },
+  "greeting": "Hello, {{name}}!",
+  "greetingSubtext": "This is your portfolio manager dashboard. You are now connected to the backend server.",
+  "lastUpdated": "Last updated {{date}}"
+}

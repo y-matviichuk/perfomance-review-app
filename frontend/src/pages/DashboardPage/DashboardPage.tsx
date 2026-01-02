@@ -1,10 +1,13 @@
 import { Button } from '@components/ui/Button';
 import { MainLayout } from '@layouts';
+
 import { useAuth, useModals } from '@store';
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
 
 import {
 	AddProjectModal,
+	LanguageSwitcher,
 	ProjectSection,
 	ServerStatusCard,
 	WelcomeCard,
@@ -13,6 +16,8 @@ import {
 import { DashboardContainer } from './styles';
 
 export const DashboardPage = () => {
+	const { t } = useTranslation();
+
 	const navigate = useNavigate();
 
 	const { user, logout } = useAuth();
@@ -32,14 +37,12 @@ export const DashboardPage = () => {
 		<MainLayout
 			headerRight={
 				<>
+					<LanguageSwitcher />
 					<Button variant="primary" onClick={handleIFrame}>
 						IFrame
 					</Button>
-					<Button variant="primary" onClick={setToggleCreateProjectModal}>
-						Add Project
-					</Button>
 					<Button variant="danger" onClick={handleLogout}>
-						Logout
+						{t('auth:login.buttons.logout')}
 					</Button>
 				</>
 			}

@@ -1,4 +1,5 @@
 import { useAuth } from '@store';
+import { useTranslation } from 'react-i18next';
 
 import { Navigate } from 'react-router';
 import { LoginForm } from './components/LoginForm';
@@ -6,6 +7,7 @@ import { Card, Container, Subtitle, Title } from './styles';
 
 export const LoginPage = () => {
 	const isAuthenticated = useAuth((state) => state.isAuthenticated);
+	const { t } = useTranslation();
 
 	if (isAuthenticated) {
 		return <Navigate to="/dashboard" replace />;
@@ -14,8 +16,8 @@ export const LoginPage = () => {
 	return (
 		<Container>
 			<Card>
-				<Title>Welcome Back</Title>
-				<Subtitle>Sign in to manage your projects</Subtitle>
+				<Title>{t('auth:login.title')}</Title>
+				<Subtitle>{t('auth:login.subtitle')}</Subtitle>
 				<LoginForm />
 			</Card>
 		</Container>

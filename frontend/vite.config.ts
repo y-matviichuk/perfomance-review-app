@@ -18,6 +18,7 @@ export default defineConfig({
 			'@providers': path.resolve(__dirname, 'src', 'providers'),
 			'@schemas': path.resolve(__dirname, 'src', 'schemas'),
 			'@utils': path.resolve(__dirname, 'src', 'utils'),
+			'@lib': path.resolve(__dirname, 'src', 'lib'),
 		},
 	},
 });

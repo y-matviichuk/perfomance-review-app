@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Card } from '@/components/ui/Card';
 import { InfoText, Title } from './styles';
 
@@ -7,13 +8,12 @@ interface WelcomeCardProps {
 }
 
 export const WelcomeCard: FC<WelcomeCardProps> = ({ username }) => {
+	const { t } = useTranslation();
+
 	return (
 		<Card>
-			<Title>Welcome, {username || 'User'}!</Title>
-			<InfoText>
-				This is your portfolio manager dashboard. You are now connected to the
-				backend server.
-			</InfoText>
+			<Title>{t('common:greeting', { name: username })}</Title>
+			<InfoText>{t('common:greetingSubtext')}</InfoText>
 		</Card>
 	);
 };

@@ -1,6 +1,7 @@
 import { formatDistanceToNow } from 'date-fns';
-import { uk } from 'date-fns/locale';
+import { enUS, uk } from 'date-fns/locale';
 import type { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 import { getImageUrl } from '@/api/projects';
 import { Card } from '@/components/ui/Card';
 import { useProjectsQuery } from '@/hooks';
@@ -17,19 +18,22 @@ import {
 } from './styles';
 
 export const ProjectList: FC = () => {
+	const { t, i18n } = useTranslation();
 	const { data: projects, isLoading, error } = useProjectsQuery();
 
 	if (isLoading) {
-		return <LoadingState>Loading projects...</LoadingState>;
+		return <LoadingState>{t('projects:list.loading')}</LoadingState>;
 	}
 
 	if (error) {
-		return <EmptyState>Failed to load projects</EmptyState>;
+		return <EmptyState>{t('projects:list.error')}</EmptyState>;
 	}
 
 	if (!projects?.length) {
-		return <EmptyState>No projects yet. Create your first one!</EmptyState>;
+		return <EmptyState>{t('projects:list.empty')}</EmptyState>;
 	}
+
+	const locale = i18n.language === 'ua' ? uk : enUS;
 
 	return (
 		<Card>
@@ -46,7 +50,7 @@ export const ProjectList: FC = () => {
 							<ProjectDate>
 								{formatDistanceToNow(new Date(project.createdAt), {
 									addSuffix: true,
-									locale: uk,
+									locale,
 								})}
 							</ProjectDate>
 						</ProjectContent>

@@ -45,6 +45,8 @@
 			"@store/*": ["src/store/*"],
 			"@providers": ["src/providers"],
 			"@providers/*": ["src/providers/*"],
+			"@lib": ["src/lib"],
+			"@lib/*": ["src/lib/*"],
 			"@schemas": ["src/schemas"],
 			"@schemas/*": ["src/schemas/*"],
 			"@utils": ["src/utils"],

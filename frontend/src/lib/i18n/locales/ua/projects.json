@@ -1,0 +1,45 @@
+{
+  "title": "Мої проєкти",
+  "count_zero": "Поки що немає проєктів",
+  "count_one": "{{count}} проєкт",
+  "count_few": "{{count}} проєкти",
+  "count_many": "{{count}} проєктів",
+  "count_other": "{{count}} проєкта",
+  "buttons": {
+    "add": "Додати проєкт",
+    "downloadPending": "Генерація..."
+  },
+  "addProject": {
+    "title": "Додати новий проєкт",
+    "fields": {
+      "title": "Назва проєкту",
+      "titlePlaceholder": "Назва проєкту",
+      "description": "Опис",
+      "descriptionPlaceholder": "Опис проєкту",
+      "image": "Завантажити зображення"
+    },
+    "buttons": {
+      "submit": "Створити проєкт",
+      "submitPending": "Створення..."
+    },
+    "success": "Проєкт \"{{title}}\" успішно створено!",
+    "errors": {
+      "uploadFailed": "Не вдалося завантажити зображення",
+      "createFailed": "Не вдалося створити проєкт"
+    }
+  },
+  "list": {
+    "loading": "Завантаження проєктів...",
+    "error": "Не вдалося завантажити проєкти",
+    "empty": "Поки що немає проєктів. Створіть свій перший!"
+  },
+  "downloadPDF": "Завантажити PDF портфоліо",
+  "createdAt": "Створено {{date}}",
+  "validation": {
+    "titleMinLength": "Назва повинна містити щонайменше 3 символи",
+    "descriptionMinLength": "Опис повинен містити щонайменше 10 символів",
+    "imageRequired": "Зображення обов'язкове",
+    "imageMaxSize": "Максимальний розмір файлу 5МБ",
+    "imageFormat": "Підтримуються лише формати .jpg, .jpeg, .png"
+  }
+}
