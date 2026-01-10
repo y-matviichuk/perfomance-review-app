@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { useController, useFormContext } from 'react-hook-form';
 
@@ -36,6 +36,14 @@ export const FileInput: FC<FileInputProps> = ({ name, label }) => {
 	});
 
 	const preview = value instanceof File ? URL.createObjectURL(value) : null;
+
+	useEffect(() => {
+		return () => {
+			if (preview) {
+				URL.revokeObjectURL(preview);
+			}
+		};
+	}, [preview]);
 
 	return (
 		<FileInputWrapper>
