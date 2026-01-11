@@ -37,10 +37,14 @@ export const ProjectSection = () => {
 
 	const canDownload = !!user && !!projects && projects.length > 0;
 
+	const projectCount = projects?.length || 0;
+
 	return (
 		<ProjectsSection>
 			<ProjectsHeader>
-				<ProjectsTitle>{t('projects:title')}</ProjectsTitle>
+				<ProjectsTitle>
+					{t('projects:title')} ({t('projects:count', { count: projectCount })})
+				</ProjectsTitle>
 				<ProjectsButtons>
 					<Button variant="primary" onClick={setToggleCreateProjectModal}>
 						{t('projects:buttons.add')}
